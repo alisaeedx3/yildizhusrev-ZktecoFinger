@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -28,17 +29,41 @@ namespace Zekotec01
             dateTimePicker_FromDate.Format = DateTimePickerFormat.Custom;
             dateTimePicker_FromDate.CustomFormat = "dd:MM:yyyy HH:mm:ss";
 
+            if (!CheckDatabaseConnection())
+                return;
+
             using (YoklamaDbEntities db = new YoklamaDbEntities())
             {
                 var yoklamaZamaniAraligi = db.YoklamaZamani.FirstOrDefault();
-               // var bitis = yoklamaZamaniAraligi.BitisSaati.AddHours(3);
+
+                if (yoklamaZamaniAraligi == null)
+                    return;
+
+                // var bitis = yoklamaZamaniAraligi.BitisSaati.AddHours(3);
                 label_yoklamaAralikZamani.Text = $"{yoklamaZamaniAraligi.BaslamaSaati.ToShortTimeString()} - {yoklamaZamaniAraligi.BaslamaSaati.AddHours(yoklamaZamaniAraligi.Sure).AddMinutes(yoklamaZamaniAraligi.Dakika).ToShortTimeString()}";
             }
 
         }
 
 
+        private bool CheckDatabaseConnection()
+        {
+            try
+            {
+                string connectionString = "Data Source=.\\RPOPS;Initial Catalog=YoklamaDb;Integrated Security=False;User ID=sa;Password=Ks#$@7F;";
 
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    return true; // Connection is successful
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Could not connect to the database. Please check your connection settings. from appConfig");
+                return false; // Connection failed
+            }
+        }
 
         #region Tool Menu
 
