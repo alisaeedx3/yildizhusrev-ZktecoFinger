@@ -12,6 +12,17 @@ namespace Zekotec01
         public FormYoklamaDefault()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.groupBox1.Text = "Daily Attendance Scheduling"; // Changing "Günlük Yoklama Zamanlama" to "Daily Attendance Scheduling"
+            this.label1.Text = "Attendance Start Time"; // Changing "Yoklama Başlangıç Saati" to "Attendance Start Time"
+            this.label2.Text = "Attendance Duration Time"; // Changing "Yoklama Süresi Zamanı" to "Attendance Duration Time"
+            this.label3.Text = "hr."; // Changing "s." to "hr."
+            this.label4.Text = "min."; // Changing "dk." to "min."
+            this.button_kaydet.Text = "Save"; // Changing "Kaydet" to "Save"
+            this.Text = "Default Attendance Form"; // Changing form title to "Default Attendance Form"
+
+
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH:mm";
 

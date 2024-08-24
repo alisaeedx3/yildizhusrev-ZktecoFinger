@@ -16,6 +16,40 @@ namespace Zekotec01
         public FormOgrenciler()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.groupBox2.Text = "Students"; // Changing "Öğrenciler" to "Students"
+            this.buttonOgrYeniEkle.Text = "New Record"; // Changing "Yeni Kayıt" to "New Record"
+            this.groupBox1.Text = "Student Information"; // Changing "Öğrenci Bilgileri" to "Student Information"
+            this.label2.Text = "Name"; // Changing "Adı" to "Name"
+            this.label6.Text = "Family Phone"; // Changing "Aile Telefonu" to "Family Phone"
+            this.label4.Text = "Mobile Phone"; // Changing "Cep Telefonu" to "Mobile Phone"
+            this.label9.Text = "Address"; // Changing "Adres" to "Address"
+            this.label11.Text = "ID Number"; // Changing "Tc Kimlik No" to "ID Number"
+            this.label10.Text = "Room Number"; // Changing "Oda Numarası" to "Room Number"
+            this.label12.Text = "Notes"; // Changing "Notlar" to "Notes"
+            this.buttonOgrGuncelle.Text = "Save"; // Changing "Kaydet" to "Save"
+            this.buttonOgrSil.Text = "Delete"; // Changing "Sil" to "Delete"
+            this.button_CihazGuncelle.Text = "Update Device"; // Changing "Cihaz Güncelle" to "Update Device"
+            this.tabPage1.Text = "Student Information"; // Changing "Öğrenci Bilgileri" to "Student Information"
+            this.tabPage4.Text = "Permission Information"; // Changing "İzin Bilgileri" to "Permission Information"
+            this.tabPage5.Text = "Device Reading Information"; // Changing "Cihaz Okuma Bilgileri" to "Device Reading Information"
+            this.tabPage3.Text = "Batch Processing"; // Changing "Toplu İşlem" to "Batch Processing"
+            this.label8.Text = "Device ID"; // Changing "Cihaz ID" to "Device ID"
+            this.groupBox5.Text = "Student Permission Information"; // Changing "Öğrenci İzin Bilgileri" to "Student Permission Information"
+            this.groupBox6.Text = "Student Device Fingerprint Reader Information"; // Changing "Öğrenci Cihaz Parmak Okuyucu Bilgileri" to "Student Device Fingerprint Reader Information"
+            this.groupBox7.Text = "Permission Dates"; // Changing "İzin Tarihleri" to "Permission Dates"
+            this.label14.Text = "Permission Start Date"; // Changing "İzin Başlama Tarihi" to "Permission Start Date"
+            this.label15.Text = "Permission End Date"; // Changing "İzin Bitiş Tarihi" to "Permission End Date"
+            this.buttonYeniizinEkle.Text = "Add New Permission"; // Changing "Yeni İzin Ekle" to "Add New Permission"
+            this.button_güncelle.Text = "Update"; // Changing "Güncelle" to "Update"
+            this.button_sil.Text = "Delete"; // Changing "Sil" to "Delete"
+            this.button_yenihareketekle.Text = "Add New Movement"; // Changing "Yeni Hareket Ekle" to "Add New Movement"
+            this.button_CihazOkuma.Text = "Show Reading Information"; // Changing "Okuma Bilgilerini Göster" to "Show Reading Information"
+            this.label_KayitDurum.Text = "Updating"; // Changing "Güncelleme" to "Updating"
+            this.buttonSearch.Text = "Search"; // Assigning text to the search button
+            this.Text = "Students"; // Changing form title to "Students"
+
         }
 
         /// <summary>

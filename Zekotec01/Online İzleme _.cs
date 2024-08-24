@@ -15,6 +15,23 @@ namespace Zekotec01
         public Online_İzleme_()
         {
             InitializeComponent();
+
+            // Change UI texts to English
+            this.groupBox7.Text = "Online Transaction Movements"; // "Online İşlem Hareketleri"
+            this.groupBox6.Text = "Student Information"; // "Öğrenci Bilgileri"
+            this.label_Name.Text = "..........................."; // Example placeholder
+            this.label_islemtarihi.Text = "................."; // Example placeholder
+            this.groupBox5.Text = "Student Movement Information"; // "Öğrenci Hareket Bilgileri"
+            this.label5.Text = "Active Student Count"; // "Aktif Öğrenci Sayısı"
+            this.label4.Text = "Participating in Attendance"; // "Yoklamaya Katılan"
+            this.label2.Text = "Not Participating in Attendance"; // "Yoklamaya Katılmayan"
+            this.groupBox4.Text = "Online Monitoring"; // "Online İzleme"
+            this.label1.Text = "Device to Monitor"; // "İzlenecek Cihaz"
+            this.button_izle.Text = "Connect and Monitor"; // "Bağlan ve İzle"
+            this.label_status.Text = "Device Not Connected"; // "Cihaz Bağlı Değil"
+            this.Text = "Online Monitoring"; // Form title "Online_İzleme"
+
+
             this.dataGridView2.Font = new FontDialogParse().GetFont();
 
         }

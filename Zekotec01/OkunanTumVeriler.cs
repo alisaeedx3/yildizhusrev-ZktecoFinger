@@ -13,6 +13,14 @@ namespace Zekotec01
         public OkunanTumVeriler()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.groupBox1.Text = "Reporting Criteria"; // Changing "Raporlama Kriterleri" to "Reporting Criteria"
+            this.buttonRaporla.Text = "Generate Report"; // Changing "Rapola" to "Generate Report"
+            this.groupBox2.Text = "Fingerprint Movements Read from Devices"; // Changing "Cihazlardan Okunan Parmak İzi Hareketleri" to "Fingerprint Movements Read from Devices"
+            this.Text = "All Read Data"; // Changing form title to "All Read Data"
+    
+
             AutoComplate();
             this.dataGridView1.Font = new FontDialogParse().GetFont();
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; //DataGridViewAutoSizeColumnMode.AllCells;

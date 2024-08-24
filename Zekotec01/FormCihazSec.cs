@@ -20,6 +20,11 @@ namespace Zekotec01
         {
             cihazlar = _cihazlar;
             InitializeComponent();
+            // Set texts of controls to English
+            this.button1.Text = "Update Selected Devices"; // Changing "Seçili Cihazları Güncelle" to "Update Selected Devices"
+            this.Text = "Select Device"; // Changing form title from "FormCihazSec" to "Select Device"
+
+
             DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
             CheckboxColumn.TrueValue = true;
             CheckboxColumn.FalseValue = false;

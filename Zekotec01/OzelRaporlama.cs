@@ -14,6 +14,16 @@ namespace Zekotec01
         public OzelRaporlama()
         {
             InitializeComponent();
+
+            groupBox1.Text = "Reporting Criteria"; // "Raporlama Kriterleri"
+            label3.Text = "Current Student Count:"; // "Mevcut Öğrenci Sayısı :"
+            label2.Text = "Student on Leave:"; // "İzinli  Öğremci :"
+            label1.Text = "Total Current:"; // "Genel Mevcut :"
+            label_mevcut.Text = "0"; // This is a placeholder, no change needed
+            label_izin.Text = "0"; // This is a placeholder, no change needed
+            label_toplam.Text = "0"; // This is a placeholder, no change needed
+            buttonRaporla.Text = "Generate Report"; // "Rapola"
+
             AutoComplate();
         }
 

@@ -12,6 +12,19 @@ namespace Zekotec01
         public FormCihazlar()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.groupBox1.Text = "Device Information"; // Changing "Cihaz Bilgileri" to "Device Information"
+            this.label4.Text = "Device Type"; // Changing "Cihaz Tipi" to "Device Type"
+            this.button_ChzSil.Text = "Delete Device"; // Changing "Cihaz Sil" to "Delete Device"
+            this.button_ChzGuncelle.Text = "Update Device"; // Changing "Cihaz Güncelle" to "Update Device"
+            this.label3.Text = "Port"; // "Port" remains "Port"
+            this.label2.Text = "Device IP"; // Changing "Cihaz IP" to "Device IP"
+            this.button_ChazEkle.Text = "Add Device"; // Changing "Cihaz Ekle" to "Add Device"
+            this.label1.Text = "Device Name"; // Changing "Cihaz Adı" to "Device Name"
+            this.groupBox2.Text = "Devices"; // Changing "Cihazlar" to "Devices"
+            this.Text = "Devices Management"; // Changing form title from "FormCihazlar" to "Devices Management"
+
         }
 
         private void FormCihazlar_Load(object sender, EventArgs e)

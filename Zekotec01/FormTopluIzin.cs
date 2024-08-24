@@ -16,6 +16,11 @@ namespace Zekotec01
         {
            
             InitializeComponent();
+            // Set texts of controls to English
+            this.btnTopluIzın.Text = "Save Leaves"; // Changing "İzinleri Kaydet" to "Save Leaves"
+            this.Text = "Bulk Leave Management"; // Changing form title to "Bulk Leave Management"
+
+
             DataGridViewCheckBoxColumn CheckboxColumn = new DataGridViewCheckBoxColumn();
             CheckboxColumn.TrueValue = true;
             CheckboxColumn.FalseValue = false;

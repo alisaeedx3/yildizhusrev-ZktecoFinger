@@ -15,6 +15,12 @@ namespace Zekotec01
         public FormYeniHareketEkle()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.button_hareket_ekle.Text = "OK"; // Changing "Tamam" to "OK"
+            this.button1.Text = "Cancel"; // Changing "İptal" to "Cancel"
+            this.Text = "Add New Movement"; // Changing form title to "Add New Movement"
+
         }
 
         private void button_hareket_ekle_Click(object sender, EventArgs e)

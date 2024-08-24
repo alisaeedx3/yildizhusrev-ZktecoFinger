@@ -11,6 +11,11 @@ namespace Zekotec01
         public FormCihazSeç()
         {
             InitializeComponent();
+            // Set texts of controls to English
+            this.button_Tamam.Text = "OK"; // Changing "Tamam" to "OK"
+            this.label1.Text = "Select the Device to Update"; // Changing "Güncelleme Yapılacak Cihazı Seçiniz" to "Select the Device to Update"
+            this.Text = "Select Device"; // Changing form title from "FormCihazSeç" to "Select Device"
+
         }
 
         private void FormCihazSeç_Load(object sender, EventArgs e)

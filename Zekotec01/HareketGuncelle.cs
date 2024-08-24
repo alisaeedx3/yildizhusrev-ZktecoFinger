@@ -18,6 +18,14 @@ namespace Zekotec01
         public HareketGuncelle(int? id)
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.button_sil.Text = "Delete"; // Changing "Sil" to "Delete"
+            this.button_guncelle.Text = "Update"; // Changing "Güncelle" to "Update"
+            this.label_ID.Text = "ID"; // Changing the label to "ID" (assuming this is for displaying the ID)
+            this.Text = "Update Movement"; // Changing form title to "Update Movement"
+
+
             if (id==null)
             {
                 MessageBox.Show("Yoklama Kaydı Seçilmedi");

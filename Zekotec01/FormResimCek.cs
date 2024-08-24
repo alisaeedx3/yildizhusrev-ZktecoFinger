@@ -21,6 +21,11 @@ namespace Zekotec01
         public  FormResimCek()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.button_Cek.Text = "Capture Image"; // Changing "Resim Çek" to "Capture Image"
+            this.Text = "Image Capture"; // Changing form title to "Image Capture"
+
         }
 
         private void FormResimCek_Load(object sender, EventArgs e)

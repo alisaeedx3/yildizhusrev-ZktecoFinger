@@ -18,6 +18,12 @@ namespace Zekotec01
         {
             InitializeComponent();
             testlabelUpdate();
+
+            // Set texts of controls to English
+            this.button1.Text = "Grid Views"; // Changing "Grid Görünümleri" to "Grid Views"
+            this.labeltest.Text = "Test Size - Font Family"; // Assuming this is already in English, no change needed
+            this.Text = "Settings"; // Changing form title from "FormAyarlar" to "Settings"
+
         }
 
         private void testlabelUpdate()

@@ -16,8 +16,51 @@ namespace Zekotec01
         public Giris()
         {
             InitializeComponent();
+            SetEnglishTexts(); // Set English text after initializing components
             this.dataGridView1.Font = new FontDialogParse().GetFont();
         }
+
+        private void SetEnglishTexts()
+        {
+            // Update Menu Items
+            KullanicilarTMenu.Text = "Student Operations";
+            öğrenciİşlemleriToolStripMenuItem.Text = "Student Transactions";
+            topluİzinToolStripMenuItem.Text = "Bulk Leave";
+            yoklamaToolStripMenuItem.Text = "Attendance";
+            onlineYoklamaToolStripMenuItem.Text = "Online Attendance";
+            günlükYoklamaAralığıToolStripMenuItem.Text = "Daily Attendance Interval";
+            yoklamaVerileriniAlToolStripMenuItem.Text = "Get Attendance Data";
+            CihazlarTMenu.Text = "Device";
+            yeniCihazToolStripMenuItem.Text = "Device Management";
+            cihazKullanıcıİşlemleriToolStripMenuItem.Text = "Device User Operations";
+            raporlamaToolStripMenuItem.Text = "Reporting";
+            günlükYoklamaToolStripMenuItem.Text = "Daily Attendance";
+            genelRaporlamaToolStripMenuItem.Text = "General Reporting";
+            okumaKayıtlarıRapolamaToolStripMenuItem.Text = "Reading Records Reporting";
+            ayarToolStripMenuItem.Text = "Settings";
+
+            // Update GroupBox Titles
+            groupBox1.Text = "Listing Results";
+            groupBox2.Text = "Daily Attendance";
+            groupBox4.Text = "Custom Query";
+
+            // Update Labels and Buttons
+            label1.Text = "Daily Attendance Interval:";
+            label2.Text = "Name Surname";
+            label4.Text = "Start Date";
+            button1.Text = "List Daily Attendance";
+            button2.Text = "List Custom Attendance";
+
+            // Update Additional Labels
+            label6.Text = "Total Students";
+            label5.Text = "Present";
+            label3.Text = "Absent";
+            label7.Text = "On Leave";
+
+            // Default label text if no data is available
+            label_yoklamaAralikZamani.Text = "-";
+        }
+
 
 
         public zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();

@@ -19,6 +19,18 @@ namespace Zekotec01
         public FormCihazKullaniciYonetimi()
         {
             InitializeComponent();
+
+            // Set texts of controls to English
+            this.groupBox4.Text = "Update All Records"; // Changing "Tüm Kayıtları Güncelleme" to "Update All Records"
+            this.label1.Text = "Device User Information"; // Changing "Cihaz kullanıcı bilgileri" to "Device User Information"
+            this.label7.Text = "Will be updated with the names in the database"; // Changing "Veri Tabanındaki isimlerle güncellenecektir" to "Will be updated with the names in the database"
+            this.button6.Text = "Update All Records"; // Changing "Tüm Kayıtları Güncelle" to "Update All Records"
+            this.label3.Text = "Device Connection Status"; // Changing "Cihaz Bağlantı Durumu" to "Device Connection Status"
+            this.label_status.Text = "Device Not Connected"; // Changing "Cihaz Bağlı Değil" to "Device Not Connected"
+            this.button_OgrGüncelle.Text = "Read Device"; // Changing "Cizhaz Oku" to "Read Device"
+            this.label2.Text = "Users of the selected device will be checked and compared with the database, results will be reported"; // Changing label2 text to English
+            this.Text = "Device User Management"; // Changing form title from "FormCihazKullaniciYonetimi" to "Device User Management"
+
         }
 
         private void button_OgrGüncelle_Click(object sender, EventArgs e)
