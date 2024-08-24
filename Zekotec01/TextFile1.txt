@@ -1,0 +1,43 @@
+﻿ *************************************************************************************************************************************************************
+ genel harekeleri listeler
+ ***********************************************
+ private void button_Listele_Click(object sender, EventArgs e)
+        {
+            MyContext db = new MyContext(Helpers.GetConnection());
+            var genelYoklama = db.Yoklamas.Where(h=>dateTimePicker_FromDate.Value<=h.Date & dateTimePicker_toDate.Value>= h.Date).ToList();
+
+            var users = db.Users.ToList();
+            var genelYoklamaGrid =
+            genelYoklama.SelectMany(yoklama =>
+                                         users.Where(user => user.UserId == yoklama.UserId)
+                             ,
+
+                             (yoklama, user) =>
+                                                  new GenelRapor
+                                                  {
+                                                      UserId = user.UserId,
+                                                      Adı = user.Name,
+                                                      Tarih = yoklama.Date,
+                                                      cihaz = yoklama.cihazTipi
+                                                  }
+                             );
+
+            if (!String.IsNullOrEmpty(textBox_CihazID.Text.Trim()))
+            {
+                int userID = int.Parse(textBox_CihazID.Text.Trim());
+                genelYoklamaGrid = genelYoklamaGrid.Where(h => h.UserId == userID).ToList();
+            }
+            if (!String.IsNullOrEmpty(textBox_Adsoyad.Text.Trim()))
+            {
+                string ad = textBox_Adsoyad.Text.Trim();
+                genelYoklamaGrid = genelYoklamaGrid.Where(h => h.Adı.ToLower().Contains(ad.ToLower())).ToList();
+            }
+
+            dataGridView1.DataSource = genelYoklamaGrid.OrderByDescending(h => h.Tarih).ToList();
+
+
+
+        }
+
+		***************************
+		***************************

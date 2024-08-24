@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33927.289
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zekotec01", "Zekotec01\Zekotec01.csproj", "{2081A308-AFAC-4206-ABD1-E4D43004E638}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Yoklama", "Yoklama\Yoklama.vdproj", "{B6F66757-AA22-4C95-8ED8-F7B56DF3D936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZkTecoV03", "ZkTecoV03\ZkTecoV03.csproj", "{A5D422B7-E469-40D4-9B30-29AA1564938A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Debug|x86.ActiveCfg = Debug|x86
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Debug|x86.Build.0 = Debug|x86
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Release|x86.ActiveCfg = Release|x86
+		{2081A308-AFAC-4206-ABD1-E4D43004E638}.Release|x86.Build.0 = Release|x86
+		{B6F66757-AA22-4C95-8ED8-F7B56DF3D936}.Debug|Any CPU.ActiveCfg = Debug
+		{B6F66757-AA22-4C95-8ED8-F7B56DF3D936}.Debug|x86.ActiveCfg = Debug
+		{B6F66757-AA22-4C95-8ED8-F7B56DF3D936}.Release|Any CPU.ActiveCfg = Release
+		{B6F66757-AA22-4C95-8ED8-F7B56DF3D936}.Release|x86.ActiveCfg = Release
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Debug|x86.ActiveCfg = Debug|x86
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Debug|x86.Build.0 = Debug|x86
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Release|x86.ActiveCfg = Release|x86
+		{A5D422B7-E469-40D4-9B30-29AA1564938A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A57232A2-8949-4514-A3BB-841AAB888A1F}
+	EndGlobalSection
+EndGlobal

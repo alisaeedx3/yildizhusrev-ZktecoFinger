@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="YoklamaDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cihaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Port" Type="int" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="CihazTipi" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Izin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BaslamaTarihi" Type="datetime" />
+          <Property Name="BitisTarihi" Type="datetime" />
+          <Property Name="KullaniciId" Type="int" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CihazUserId" Type="int" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="250" />
+          <Property Name="CepTel" Type="nvarchar" MaxLength="25" />
+          <Property Name="AileTel" Type="nvarchar" MaxLength="25" />
+          <Property Name="Resim" Type="varbinary(max)" />
+          <Property Name="Durum" Type="int" />
+          <Property Name="TcKimlik" Type="nvarchar" MaxLength="11" />
+          <Property Name="OdaNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="250" />
+          <Property Name="Not" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="OkumaKayit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CihazUserID" Type="int" Nullable="false" />
+          <Property Name="OkumaZamani" Type="datetime" Nullable="false" />
+          <Property Name="CihazTipi" Type="int" Nullable="false" />
+          <Property Name="OkunanCihazId" Type="int" />
+        </EntityType>
+        <EntityType Name="YoklamaZamani">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BaslamaSaati" Type="datetime" Nullable="false" />
+          <Property Name="BitisSaati" Type="datetime" Nullable="false" />
+          <Property Name="Sure" Type="int" />
+          <Property Name="Dakika" Type="int" />
+        </EntityType>
+        <Association Name="FK_Izin_To_Kullanici_">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Izin" Type="Self.Izin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Izin">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YoklamaDbModelStoreContainer">
+          <EntitySet Name="Cihaz" EntityType="Self.Cihaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Izin" EntityType="Self.Izin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OkumaKayit" EntityType="Self.OkumaKayit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YoklamaZamani" EntityType="Self.YoklamaZamani" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Izin_To_Kullanici_" Association="Self.FK_Izin_To_Kullanici_">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Izin" EntitySet="Izin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YoklamaDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cihaz">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Port" Type="Int32" Nullable="false" />
+          <Property Name="Adi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CihazTipi" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Izin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BaslamaTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BitisTarihi" Type="DateTime" Precision="3" />
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Izin_To_Kullanici_" FromRole="Izin" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CihazUserId" Type="Int32" />
+          <Property Name="AdSoyad" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CepTel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="AileTel" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Durum" Type="Int32" />
+          <Property Name="TcKimlik" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="OdaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Not" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Izin" Relationship="Self.FK_Izin_To_Kullanici_" FromRole="Kullanici" ToRole="Izin" />
+        </EntityType>
+        <EntityType Name="OkumaKayit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CihazUserID" Type="Int32" Nullable="false" />
+          <Property Name="OkumaZamani" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CihazTipi" Type="Int32" Nullable="false" />
+          <Property Name="OkunanCihazId" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Izin_To_Kullanici_">
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+          <End Role="Izin" Type="Self.Izin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kullanici">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Izin">
+              <PropertyRef Name="KullaniciId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YoklamaDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cihaz" EntityType="Self.Cihaz" />
+          <EntitySet Name="Izin" EntityType="Self.Izin" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="OkumaKayit" EntityType="Self.OkumaKayit" />
+          <AssociationSet Name="FK_Izin_To_Kullanici_" Association="Self.FK_Izin_To_Kullanici_">
+            <End Role="Kullanici" EntitySet="Kullanici" />
+            <End Role="Izin" EntitySet="Izin" />
+          </AssociationSet>
+          <EntitySet Name="YoklamaZamani" EntityType="YoklamaDbModel.YoklamaZamani" />
+        </EntityContainer>
+        <EntityType Name="YoklamaZamani">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BaslamaSaati" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BitisSaati" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sure" Type="Int32" />
+          <Property Name="Dakika" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YoklamaDbModelStoreContainer" CdmEntityContainer="YoklamaDbEntities">
+          <EntitySetMapping Name="Cihaz">
+            <EntityTypeMapping TypeName="YoklamaDbModel.Cihaz">
+              <MappingFragment StoreEntitySet="Cihaz">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Port" ColumnName="Port" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="CihazTipi" ColumnName="CihazTipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Izin">
+            <EntityTypeMapping TypeName="YoklamaDbModel.Izin">
+              <MappingFragment StoreEntitySet="Izin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BaslamaTarihi" ColumnName="BaslamaTarihi" />
+                <ScalarProperty Name="BitisTarihi" ColumnName="BitisTarihi" />
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="YoklamaDbModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CihazUserId" ColumnName="CihazUserId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="CepTel" ColumnName="CepTel" />
+                <ScalarProperty Name="AileTel" ColumnName="AileTel" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="TcKimlik" ColumnName="TcKimlik" />
+                <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="Not" ColumnName="Not" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OkumaKayit">
+            <EntityTypeMapping TypeName="YoklamaDbModel.OkumaKayit">
+              <MappingFragment StoreEntitySet="OkumaKayit">
+                <ScalarProperty Name="OkunanCihazId" ColumnName="OkunanCihazId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CihazUserID" ColumnName="CihazUserID" />
+                <ScalarProperty Name="OkumaZamani" ColumnName="OkumaZamani" />
+                <ScalarProperty Name="CihazTipi" ColumnName="CihazTipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YoklamaZamani">
+            <EntityTypeMapping TypeName="YoklamaDbModel.YoklamaZamani">
+              <MappingFragment StoreEntitySet="YoklamaZamani">
+                <ScalarProperty Name="Dakika" ColumnName="Dakika" />
+                <ScalarProperty Name="Sure" ColumnName="Sure" />
+                <ScalarProperty Name="BitisSaati" ColumnName="BitisSaati" />
+                <ScalarProperty Name="BaslamaSaati" ColumnName="BaslamaSaati" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

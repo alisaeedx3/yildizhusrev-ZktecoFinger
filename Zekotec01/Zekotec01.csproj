@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2081A308-AFAC-4206-ABD1-E4D43004E638}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zekotec01</RootNamespace>
+    <AssemblyName>Zekotec01</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Zekotec01.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C0664E8A8979B0C4211C5B86C32387E2C2920EF0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Zekotec01_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetEntityFrameworkProvider, Version=1.1.1.0, Culture=neutral, PublicKeyToken=756cf6beb8fe7b41, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetEntityFrameworkProvider.1.1.2\lib\JetEntityFrameworkProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Downloads\a\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.0\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DALMssql\Cihaz.cs">
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\Izin.cs">
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\Kullanici.cs">
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\ModelMssql.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMssql.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\ModelMssql.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\ModelMssql.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelMssql.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\OkumaKayit.cs">
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DALMssql\YoklamaZamani.cs">
+      <DependentUpon>ModelMssql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Migrations.cs" />
+    <Compile Include="DAL\MyContext.cs" />
+    <Compile Include="DAL\Tablolar.cs" />
+    <Compile Include="FormAyarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAyarlar.Designer.cs">
+      <DependentUpon>FormAyarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCihazKullaniciYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCihazKullaniciYonetimi.Designer.cs">
+      <DependentUpon>FormCihazKullaniciYonetimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCihazlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCihazlar.Designer.cs">
+      <DependentUpon>FormCihazlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCihazSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCihazSec.Designer.cs">
+      <DependentUpon>FormCihazSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCihazSeç.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCihazSeç.Designer.cs">
+      <DependentUpon>FormCihazSeç.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenelRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenelRapor.Designer.cs">
+      <DependentUpon>FormGenelRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListe.Designer.cs">
+      <DependentUpon>FormListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgrenciler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciler.Designer.cs">
+      <DependentUpon>FormOgrenciler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRapor.Designer.cs">
+      <DependentUpon>FormRapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormResimCek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResimCek.Designer.cs">
+      <DependentUpon>FormResimCek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTopluIzin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTopluIzin.Designer.cs">
+      <DependentUpon>FormTopluIzin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormYeniHareketEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYeniHareketEkle.Designer.cs">
+      <DependentUpon>FormYeniHareketEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormYoklamaDefault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormYoklamaDefault.Designer.cs">
+      <DependentUpon>FormYoklamaDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HareketGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HareketGuncelle.Designer.cs">
+      <DependentUpon>HareketGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Models\Cihaz.cs" />
+    <Compile Include="Models\FontDialogParse.cs" />
+    <Compile Include="Models\IzinDurum.cs" />
+    <Compile Include="Models\Ogrenci.cs" />
+    <Compile Include="Models\Rapor.cs" />
+    <Compile Include="Models\TopluIzinVM.cs" />
+    <Compile Include="Models\ZamanAyarlari.cs" />
+    <Compile Include="OkunanTumVeriler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OkunanTumVeriler.Designer.cs">
+      <DependentUpon>OkunanTumVeriler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Online İzleme _.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Online İzleme _.Designer.cs">
+      <DependentUpon>Online İzleme _.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Online İzleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Online İzleme.Designer.cs">
+      <DependentUpon>Online İzleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OzelRaporlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OzelRaporlama.Designer.cs">
+      <DependentUpon>OzelRaporlama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Giris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giris.Designer.cs">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bin\Debug\ReportGenel.rdlc" />
+    <EmbeddedResource Include="bin\Debug\Ryoklama.rdlc" />
+    <EmbeddedResource Include="FormAyarlar.resx">
+      <DependentUpon>FormAyarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCihazKullaniciYonetimi.resx">
+      <DependentUpon>FormCihazKullaniciYonetimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCihazlar.resx">
+      <DependentUpon>FormCihazlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCihazSec.resx">
+      <DependentUpon>FormCihazSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCihazSeç.resx">
+      <DependentUpon>FormCihazSeç.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenelRapor.resx">
+      <DependentUpon>FormGenelRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListe.resx">
+      <DependentUpon>FormListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciler.resx">
+      <DependentUpon>FormOgrenciler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRapor.resx">
+      <DependentUpon>FormRapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResimCek.resx">
+      <DependentUpon>FormResimCek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTopluIzin.resx">
+      <DependentUpon>FormTopluIzin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYeniHareketEkle.resx">
+      <DependentUpon>FormYeniHareketEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormYoklamaDefault.resx">
+      <DependentUpon>FormYoklamaDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HareketGuncelle.resx">
+      <DependentUpon>HareketGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OkunanTumVeriler.resx">
+      <DependentUpon>OkunanTumVeriler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Online İzleme _.resx">
+      <DependentUpon>Online İzleme _.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Online İzleme.resx">
+      <DependentUpon>Online İzleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OzelRaporlama.resx">
+      <DependentUpon>OzelRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Giris.resx">
+      <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DALMssql\ModelMssql.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelMssql.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DALMssql\ModelMssql.edmx.diagram">
+      <DependentUpon>ModelMssql.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Zekotec01.DAL.GenelRapor.datasource" />
+    <None Include="Properties\DataSources\Zekotec01.DAL.YoklamaView.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Zekotec01_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BayanAvatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frames-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kişiler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\megaphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-mark-4-64.png" />
+    <None Include="Resources\camera-2-64.png" />
+    <None Include="Resources\add-file-64.png" />
+    <None Include="Resources\delete-16.png" />
+    <Content Include="DALMssql\ModelMssql.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMssql.edmx</DependentUpon>
+      <LastGenOutput>ModelMssql.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DALMssql\ModelMssql.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelMssql.edmx</DependentUpon>
+      <LastGenOutput>ModelMssql.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\ok-64.png" />
+    <None Include="Resources\search-13-32.png" />
+    <None Include="Resources\search-3-16.png" />
+    <None Include="Resources\save-16.png" />
+    <None Include="Resources\settings-flat.png" />
+    <None Include="Resources\settings.png" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial110.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial110.dll" />
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\resimler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="zkemkeeper">
+      <Guid>{FE9DED34-E159-408E-8490-B720A5E632C7}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
